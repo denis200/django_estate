@@ -133,20 +133,22 @@ AUTH_USER_MODEL = 'users.User'
 REST_FRAMEWORK={
     "DEFAULT_AUTHENTICATION_CLASSES":(
         "rest_framework_simplejwt.authentication.JWTAuthentication",
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     )
 }
 from datetime import timedelta
 
-SIMPLE_JWT ={
-    "AUTH_HEADER_TYPES":(
+SIMPLE_JWT = {
+    "AUTH_HEADER_TYPES": (
         "Bearer",
         "JWT",
     ),
-    "ACCESS_TOKEN_LIFETIME":timedelta(minutes=120),
-    "REFRESH_TOKEN_LIFETIME":timedelta(days=1),
-    'SIGNING_KEY':env("SIGNING_KEY"),
-    "AUTH_HEADER_NAME":"HTTP_AUTHORIZSTION",
-    "AUTH_TOKEN_CLASSES":("rest_framework_simplejwt.tokens.AccesToken",),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=120),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "SIGNING_KEY": env("SIGNING_KEY"),
+    "AUTH_HEADER_NAME": "HTTP_AUTHORIZATION",
+    "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
 }
 
 DJOSER ={
