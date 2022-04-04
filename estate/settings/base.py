@@ -1,5 +1,6 @@
-import environ
 from pathlib import Path
+from datetime import timedelta
+import environ
 
 env = environ.Env(
     DEBUG =(bool, False)
@@ -137,7 +138,6 @@ REST_FRAMEWORK={
         'rest_framework.authentication.SessionAuthentication',
     )
 }
-from datetime import timedelta
 
 SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": (
@@ -173,6 +173,7 @@ DJOSER ={
 
 import logging
 import logging.config
+
 from django.utils.log import DEFAULT_LOGGING
 
 logger = logging.getLogger(__name__)

@@ -1,6 +1,9 @@
 from csv import list_dialects
+
 from django.contrib import admin
+
 from .models import Rating
+
 
 class RatingAdmin(admin.ModelAdmin):
     list_display = ["rater","agent","rating"]
