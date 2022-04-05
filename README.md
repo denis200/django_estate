@@ -41,20 +41,20 @@ py manage.py runserver
 These endpoints allow you to handle Stripe subscriptions for Publish and Analyze.
 ### Profiles
 
- GET [/api/v1/profile/me/]()  - Профиль пользователя\
- PATCH [/api/v1/profile/update/username/]() - Обновить профиль
+ GET [/api/v1/profile/me/]()  - User Profile
+ PATCH [/api/v1/profile/update/username/]() - Update Profile
 ```
 {
     "about_me":"I am passionate about Real Estate",
     "phone_number":"+77777777777"
 }
 ```
- GET [/api/v1/profile/agents/all/]()  - Список всех агентов \
- GET [/api/v1/profile/top-agents/all/]()  - Список всех топ агентов
+ GET [/api/v1/profile/agents/all/]()  - Get All Agents \
+ GET [/api/v1/profile/top-agents/all/]()  - Get Top Agents
 
 ### Property
 
- POST [api/v1/properties/create/]() - Создать недвижимость
+ POST [api/v1/properties/create/]() - Create Property
 ```
 {
     "title":"My very big property",
@@ -63,10 +63,10 @@ These endpoints allow you to handle Stripe subscriptions for Publish and Analyze
     "price":100000
 }
 ```
-GET [/api/v1/properties/all/]() - Список всех недвижимостей \
-GET [/api/v1/properties/agents/]() - Список недвижимости определенного агента\
-GET [/api/v1/properties/details/PROPERTYNAME/]() - Информация о недвижимости\
-PUT [/api/v1/properties/update/PROPERTYNAME/]() - Обновить информацию о недвижимости
+GET [/api/v1/properties/all/]() - Get Propery List \
+GET [/api/v1/properties/agents/]() - Get Agent Property List \
+GET [/api/v1/properties/details/PROPERTYNAME/]() - Property Detail\
+PUT [/api/v1/properties/update/PROPERTYNAME/]() - Update Property
 ```
 {
     "title":"Property in Russsia",
@@ -74,11 +74,11 @@ PUT [/api/v1/properties/update/PROPERTYNAME/]() - Обновить информ�
     "country":"Russia"
 }
 ```
-DELETE [/api/v1/properties/delete/PROPERTYNAME/]() - Удалить недвижимость
+DELETE [/api/v1/properties/delete/PROPERTYNAME/]() - Delete Property
 
 ### Ratings & Enquiries
 
-POST [/api/v1/ratings/UUID/]() - Оценить агента (1 - 5)
+POST [/api/v1/ratings/UUID/]() - Rate an Agent (1 - 5)
 
 ```
 {
@@ -86,7 +86,7 @@ POST [/api/v1/ratings/UUID/]() - Оценить агента (1 - 5)
     "comment":"He did good"
 }
 ```
-POST [/api/v1/enquiries/]() - Отправить запрос
+POST [/api/v1/enquiries/]() - Send Enquire
 ```
 {
     "name":"Test",
@@ -98,7 +98,7 @@ POST [/api/v1/enquiries/]() - Отправить запрос
 
 ### Users
 
-POST [/api/v1/auth/users/]() - Регистрация
+POST [/api/v1/auth/users/]() - Registration
 ```
 {
     "username": "",
@@ -109,7 +109,7 @@ POST [/api/v1/auth/users/]() - Регистрация
     "re_password": ""
 }
 ```
-POST [/api/v1/auth/users/activation/]()- Активация аккаунта
+POST [/api/v1/auth/users/activation/]()- Activate Account
 ```
 #Даннные были отправлены на email
 {
@@ -117,20 +117,20 @@ POST [/api/v1/auth/users/activation/]()- Активация аккаунта
     "token":"b391cc-fbdca5a8fc1cfae3e40495e05c779ce7"
 }
 ```
-POST [/api/v1/auth/jwt/create/]() - Авторизация
+POST [/api/v1/auth/jwt/create/]() - Authtorization
 ```
 {
     "email":"",
     "password":""
 }
 ```
-POST [/api/v1/auth/users/reset_password/]() - Запрос на смену пароля
+POST [/api/v1/auth/users/reset_password/]() - Reset Password Request
 ```
 {
     "email":""
 }
 ```
-POST [/api/v1/auth/users/reset_password_confirm/]() - Подтверждение смены пароля 
+POST [/api/v1/auth/users/reset_password_confirm/]() - Confirm Reset Password
 ```
 {
     "new_password":"",
